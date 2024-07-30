@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import ReactSwitch from "react-switch";
