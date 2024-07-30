@@ -16,8 +16,14 @@ module.exports.profileData = async (req, res) => {
 
 // To get all data
 module.exports.Data = async (req, res) => {
-  const Users = await ProfileModel.find();
-  res.json({ status: "ok", Users, userID: req.user.id });
+  
+  try {
+    const Users = await ProfileModel.find();
+    res.json({ status: "ok", Users, userID: req.user.id });
+  } catch (error) {
+    console.log(error)
+    res.json({ status: "fail" });
+  }
 };
 
 cloudinary.config({

@@ -17,9 +17,10 @@ export default function Explore() {
 
   useEffect(() => {
     const handleResponse = async () => {
-      const response = await getData("data");
+      try {
+        const response = await getData("data");
       let data = response.data;
-      if (data.status === "ok") {
+      if (data?.status === "ok") {
         setUserID(data.userID);
         setUsers(
           data.Users.filter(
@@ -28,10 +29,11 @@ export default function Explore() {
           )
         );
         setLoading(false);
-      } else {
-        toast.error("Unauthorised access");
-        navigate("/verify/login");
-        return;
+      }
+      } catch (error) {
+          toast.error("Unauthorised access");
+          navigate("/verify/login");
+          return;
       }
     };
     handleResponse();

@@ -7,11 +7,9 @@ module.exports.userVerification = async (req, res, next) => {
   if (!token) {
     return res.status(401).json({ status: false, message: "Unauthorized" });
   }
-
   try {
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET_KEY);
     const user = await UserModel.findOne({ _id: decodedToken.id });
-
     if (user) {
       req.user = decodedToken; // Attach user object to the request for further use
       if (req.path !== "/") {
