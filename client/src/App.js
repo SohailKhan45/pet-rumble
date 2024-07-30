@@ -1,8 +1,6 @@
 import React, { lazy, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/react"
 import "react-toastify/dist/ReactToastify.css";
 import Verify from "./Verify";
 import Path from "./Path";
@@ -23,8 +21,6 @@ function App() {
         <Route path="*" element={<Path />} />
       </Routes>
       <Footer />
-      <SpeedInsights/>
-      <Analytics />
       <ToastContainer />
     </div>
   );
