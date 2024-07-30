@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-sparse-arrays */
 import React, { useEffect, useState } from "react";
 import Base from "../components/Base";
 import "../styles/resetPassword.css";
@@ -85,7 +87,7 @@ const OTP = () => {
       input = input + num;
       return input;
     });
-    if (otp == input) {
+    if (otp === input) {
       navigate("/verify/ChangePassword", { state: email });
     } else {
       toast.error("Wrong OTP entered.");

@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useEffect, useState } from "react";
 import "../styles/vaccination.css";
 import Logo from "../assets/images/wigglesLogo.png";
@@ -24,7 +26,7 @@ const Vaccination = () => {
         const response = await postData("userdata", {
           userID: id,
         });
-        if (response.status != 200) {
+        if (response.status !== 200) {
           toast.error("Please refresh");
           return;
         }

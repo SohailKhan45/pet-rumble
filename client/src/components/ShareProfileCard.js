@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/QRGenerator.css';
-import { BsWhatsapp, BsTwitter, BsFacebook } from 'react-icons/bs';
+import { BsWhatsapp } from 'react-icons/bs';
 import { MdContentCopy } from 'react-icons/md';
 import { TiTick } from "react-icons/ti";
 

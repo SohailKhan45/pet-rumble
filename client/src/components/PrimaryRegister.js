@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../index.css";
@@ -36,6 +37,7 @@ const Register = ({
     }
 
     if (
+      // eslint-disable-next-line
       !password.match(
         /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]{8,20}$/
       )

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React, { useState } from "react";
 import Base from "../components/Base";
 import { useLocation, useNavigate } from "react-router-dom";

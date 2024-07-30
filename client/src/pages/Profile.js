@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useEffect, useState } from "react";
 import { AiOutlineSetting } from "react-icons/ai";
 import "../styles/login.css";

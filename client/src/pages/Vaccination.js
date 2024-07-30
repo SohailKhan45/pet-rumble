@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useEffect, useState } from "react";
 import { VaccinationTableSkeleton } from "../utils/skeleton";
 import ShareVaccination from "../components/ShareVaccinations";
