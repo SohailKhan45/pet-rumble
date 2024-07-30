@@ -18,6 +18,14 @@ app.use(
   })
 );
 
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+// Catch-all route to serve index.html for all non-API routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
+
 mongoose.connect(`${process.env.DB_CONNECTION_STRING}`);
 
 app.use("/", routes);
