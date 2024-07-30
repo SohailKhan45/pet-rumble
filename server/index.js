@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
+const path = require('path')
 const routes = require("./routes");
 
 require("dotenv").config();
@@ -18,7 +19,6 @@ app.use(
   })
 );
 
-const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 // Catch-all route to serve index.html for all non-API routes
