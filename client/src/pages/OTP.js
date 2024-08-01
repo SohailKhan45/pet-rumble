@@ -82,12 +82,8 @@ const OTP = () => {
       toast.warn("OTP has expired. Click Resend code to get new OTP.");
       return;
     }
-    let input = "";
-    userotp.map((num) => {
-      input = input + num;
-      return input;
-    });
-    if (otp === input) {
+    const inputOTP = userotp.join('');
+    if (otp === parseInt(inputOTP)) {
       navigate("/verify/ChangePassword", { state: email });
     } else {
       toast.error("Wrong OTP entered.");
